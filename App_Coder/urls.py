@@ -4,5 +4,7 @@ from App_Coder.views import *
 
 urlpatterns = [
     path('inicio/',inicio),
-    path('agregar_profesor/',agregar_profesor),
+    path('cliente/',cliente),
+    path('artista/',artista),
+    path('proyecto/',proyecto),
 ]
