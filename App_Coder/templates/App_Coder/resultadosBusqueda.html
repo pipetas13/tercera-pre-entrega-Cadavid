@@ -1,0 +1,10 @@
+<p>Estamos Buscando la:{{cantidad}}</p>
+
+{% if proyectos%} 
+<ul>
+    {% for proyecto in proyectos %}
+        <li>{{proyecto.nombre}}</li>
+        <li>{{proyecto.cantidad}}</li>
+    {% end for %}
+</ul>
+{% endif %}

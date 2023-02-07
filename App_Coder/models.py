@@ -5,14 +5,14 @@ from django.db import models
 class cliente(models.Model):
     nombre = models.CharField(max_length=40) #Mensajes de texto pequeños
     apellido = models.CharField(max_length=40) #Mensajes de texto pequeños
-    email = models.EmailField()
+    email = models.EmailField(max_length=254)
     edad = models.IntegerField(default = None)
 
 #Se crea la clase artista para RNDM DCKS
 class artista(models.Model):
     nombre = models.CharField(max_length=40) #Mensajes de texto pequeños
     apellido = models.CharField(max_length=40) #Mensajes de texto pequeños
-    email = models.EmailField()
+    email = models.EmailField(max_length=254)
     edad = models.IntegerField(default = None)
     estilo = models.CharField(max_length=40)
 #Se crea la clase proyecto para RNDM DCKS

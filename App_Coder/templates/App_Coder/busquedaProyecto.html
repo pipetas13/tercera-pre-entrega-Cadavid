@@ -1,0 +1,17 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+  Searching for projects
+ {% endblock %}
+
+
+ {% block forms %} 
+ <h2 class="text-white mb-5">Search Projects</h2>
+
+ <form action = '/App_Coder/resultados' method="GET"> 
+    <input type = 'number' name="cantidad" id="cantidad">
+    <input type ='submit' value="Buscar">
+
+</form>                       
+{% endblock %}

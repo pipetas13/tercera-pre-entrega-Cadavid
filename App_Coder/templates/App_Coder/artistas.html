@@ -1,5 +1,21 @@
+
 {% extends 'App_Coder/inicio.html' %}
 
 {% block titulo %} 
-   See Artists
+   Artists Form
  {% endblock %}
+
+
+ {% block forms %} 
+ <h2 class="text-white mb-5">Fill Artists Form</h2>
+ {% if artista_formulario.errors %}
+ <p> Estan mal los datos </p>
+ {% endif %}
+ <form action = '' method="POST"> {% csrf_token %}
+    <table>
+        {{ formulario2.as_table }}
+    </table>
+    <input type="submit",value='Enviar'>
+
+</form>                       
+{% endblock %}
