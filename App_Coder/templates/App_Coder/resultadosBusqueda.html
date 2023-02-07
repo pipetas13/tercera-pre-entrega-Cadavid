@@ -1,10 +1,10 @@
-<p>Estamos Buscando la:{{cantidad}}</p>
+<p>Estamos Buscando el proyecto con:{{cantidad}} NFTs</p>
 
 {% if proyectos%} 
 <ul>
     {% for proyecto in proyectos %}
         <li>{{proyecto.nombre}}</li>
         <li>{{proyecto.cantidad}}</li>
-    {% end for %}
+    {% endfor %}
 </ul>
 {% endif %}
