@@ -15,7 +15,7 @@ class artista(models.Model):
     email = models.EmailField()
     edad = models.IntegerField(default = None)
     estilo = models.CharField(max_length=40)
-
+#Se crea la clase proyecto para RNDM DCKS
 class proyectos(models.Model):
     nombre = models.CharField(max_length=40) #Mensajes de texto pequeños
     #instagram = models.EmailField()
