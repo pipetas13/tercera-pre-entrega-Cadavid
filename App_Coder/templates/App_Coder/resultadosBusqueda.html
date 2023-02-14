@@ -1,10 +1,8 @@
 <p>Estamos Buscando el proyecto con:{{cantidad}} NFTs</p>
 
-{% if proyectos%} 
 <ul>
-    {% for proyecto in proyectos %}
-        <li>{{proyecto.nombre}}</li>
-        <li>{{proyecto.cantidad}}</li>
+    {% for x in proyecto %}
+        <li>El nombre del proyecto es:{{x.nombre}}</li>
+        <li>Tiene {{x.cantidad}} NFTs</li>
     {% endfor %}
 </ul>
-{% endif %}
