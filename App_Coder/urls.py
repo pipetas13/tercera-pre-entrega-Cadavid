@@ -9,5 +9,5 @@ urlpatterns = [
     path('proyecto/',proyecto_formulario, name='Projects'),
     path('clienteformulario/',cliente_formulario, name='ClientForm'),
     path('busquedaProyecto/',busquedaProyecto,name='BusquedaProyecto'),
-    path('resultados/', resultados,name='ResultadosBusqueda'),
+    path('resultadosBusqueda/', resultados,name='ResultadosBusqueda'),
 ]
