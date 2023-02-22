@@ -20,3 +20,8 @@ class proyectos(models.Model):
     nombre = models.CharField(max_length=40) #Mensajes de texto pequeños
     #instagram = models.EmailField()
     cantidad = models.IntegerField(default = None)
+    imagen = models.ImageField(default = None)
+    def __str__(self):
+        return f"Name: {self.nombre} - Number {self.cantidad} "
+
+

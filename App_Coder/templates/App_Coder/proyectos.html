@@ -2,20 +2,28 @@
 {% extends 'App_Coder/inicio.html' %}
 
 {% block titulo %} 
-   Projects Form
+   Projects
  {% endblock %}
 
 
  {% block forms %} 
- <h2 class="text-white mb-5">Fill Project Form</h2>
- {% if proyecto_formulario.errors %}
- <p> Estan mal los datos </p>
- {% endif %}
- <form action = '' method="POST"> {% csrf_token %}
-    <table>
-        {{ formulario3.as_table }}
-    </table>
-    <input type="submit",value='Enviar'>
+ <body>
+    {% for x in proyecto %}
+        <li>{{x}}</li>
+    {% endfor %}
+</body>
 
-</form>                       
+<h2 class="text-white mb-5">Fill Project Form</h2>
+{% if proyecto_formulario.errors %}
+<p> Estan mal los datos </p>
+{% endif %}
+<form action = '' method="POST"> {% csrf_token %}
+   <table>
+       {{ formulario3.as_table }}
+   </table>
+   <input type="submit",value='Enviar'>
+
+</form>    
+ 
+                   
 {% endblock %}

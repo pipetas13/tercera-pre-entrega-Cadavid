@@ -1,0 +1,17 @@
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Acá Puedes Iniciar Sesión
+ {% endblock %}
+
+ {% block forms %} 
+ <form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+        {{formulario1.as_table}}
+    </table>
+    
+
+    <input type = "submit" value="Iniciar Sesión">
+</form>
+{% endblock %}

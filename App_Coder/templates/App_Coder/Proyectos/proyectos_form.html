@@ -1,0 +1,15 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Here you create projects
+ {% endblock %}
+
+
+ {% block forms %} 
+ <form action="" method="POST" > {% csrf_token %}
+    {{ form|crispy }}
+    <input type = "submit" value="Enviar" class="btn btn-success">
+</form>
+ 
+{% endblock %}

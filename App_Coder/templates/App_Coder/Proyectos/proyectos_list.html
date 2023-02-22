@@ -1,0 +1,44 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Projects Availabels
+ {% endblock %}
+
+ {% block forms %} 
+
+ <button>
+    <a href="{% url 'Projects' %}">Create Project</a>
+</button>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Número</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for project in object_list %}
+
+        <tr>
+            <th scope="row">{{project.nombre}}</th>
+            <td>{{project.cantidad}}</td>
+            <td>{{project.imagen}}</td>
+            <td>
+                <button>
+                    <a href="{% url 'Editar Proyectos' projects.nombre %}">Edit Project</a>
+                </button>
+                <button>
+                    <a href="{% url 'Borrar Proyectos' proyects.nombre %}">Erase Project</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+ 
+{% endblock %}

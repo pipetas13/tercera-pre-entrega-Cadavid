@@ -1,0 +1,17 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Here you erase projects
+ {% endblock %}
+
+
+ {% block forms %} 
+ <form action="" method="POST"> {% csrf_token %}
+    
+    Are you sure you want to delete the project?"{{object.nombre}}"?
+ 
+     <input type = "submit" value="Enviar">
+ </form>
+ 
+{% endblock %}
