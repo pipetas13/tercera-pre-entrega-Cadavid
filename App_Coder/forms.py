@@ -2,13 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
- # Se crean los formularios para las 3 clases y para la autenticación
- #Forms 3 clases
-class formulario_cliente(forms.Form):
-    nombre = forms.CharField()
-    apellido = forms.CharField()
-    email = forms.EmailField()
-    edad = forms.IntegerField()
+ # Se crean los formularios para las 2 clases y para la autenticación
+ #Forms 2 clases
 
 class formulario_artista(forms.Form):
     nombre = forms.CharField()

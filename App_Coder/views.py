@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.decorators import login_required
 #superuser : pipetas password: pipetas
 
 # Create your views here.
@@ -14,6 +14,9 @@ from App_Coder.forms import *
 
 def inicio (request):
     return render(request, 'App_Coder/inicio.html')
+
+def about (request):
+    return render(request, 'App_Coder/about.html')
 
 #Autentications Views
 def registro(request):
@@ -67,21 +70,8 @@ def iniciar_sesion(request):
     
     return render(request, "App_Coder/autentication/login.html", {"formulario1":miFormulario})
 
-
-def cliente_formulario(request):
-    if request.method =='POST':
-        formulario1 = formulario_cliente(request.POST)
-        print(formulario1)
-        if formulario1.is_valid():
-            informacion = formulario1.cleaned_data
-            Cliente1 = cliente(nombre = informacion['nombre'], apellido = informacion['apellido'] , email=informacion['email'], edad = informacion['edad'])
-            Cliente1.save()
-            return render (request, 'App_Coder/inicio.html')
-    
-    else:
-        formulario1 = formulario_cliente()
-    return render (request, 'App_Coder/clienteformulario.html', {'formulario1':formulario1}) 
-
+#Solo usuarios con permisos de staff pueden crear artistas.
+@login_required
 def artista_formulario(request):
     if request.method =='POST':
         formulario2 = formulario_artista(request.POST)
@@ -96,14 +86,15 @@ def artista_formulario(request):
         formulario2 = formulario_artista()
     return render (request, 'App_Coder/artistas.html', {'formulario2':formulario2}) 
 
+#Solo los artistas pueden crear proyectos.
+@login_required
 def proyecto_formulario(request):
     if request.method =='POST':
         formulario3 = formulario_proyecto(request.POST)
         print(formulario3)
         if formulario3.is_valid():
             informacion = formulario3.cleaned_data
-            Proyecto1 = proyectos(nombre = informacion['nombre'], cantidad = informacion['cantidad'],imagen = informacion['imagen']  )
-            """,imagen = informacion['imagen']"""
+            Proyecto1 = proyectos(nombre = informacion['nombre'], cantidad = informacion['cantidad'], imagen = informacion['imagen']  )
             Proyecto1.save()
             return render (request, 'App_Coder/inicio.html')
     

@@ -1,8 +1,25 @@
-<p>Estamos Buscando el proyecto con:{{cantidad}} NFTs</p>
 
-<ul>
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+<p>Looking for the NFT number:{{cantidad}} </p>
+ {% endblock %}
+
+
+ {% block forms %} 
+
+ <ul>
     {% for x in proyecto %}
-        <li>El nombre del proyecto es:{{x.nombre}}</li>
-        <li>Tiene {{x.cantidad}} NFTs</li>
+        <li>Name of the project is:{{x.nombre}}</li>
+        <p>{{x.nombre}} Number {{x.cantidad}} NFT</p>
+
+        <p><img src="{{x.imagen.url}}" > </p>
+
     {% endfor %}
 </ul>
+                   
+{% endblock %}
+
+
+
+
