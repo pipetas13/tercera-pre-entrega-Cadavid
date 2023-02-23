@@ -1,7 +1,8 @@
 from django.urls import path 
 from App_Coder.views import *
 from django.contrib.auth.views import LogoutView
-
+from django.conf.urls.static  import static
+from django.conf import settings
 urlpatterns = [
     path('',inicio, name='Inicio'),
     #urls autenticacion de usuario
@@ -26,3 +27,5 @@ urlpatterns = [
     path("Proyectos/borrar/<int:pk>", ProyectoBorrar.as_view(), name="Borrar Proyectos"),
     path("Proyectos/editar/<int:pk>", ProyectoEditar.as_view(), name="Editar Proyectos"),
 ]
+
+urlpatterns += static[settings.MEDIA_URL,document_root=settings.MEDIA_ROOT]
