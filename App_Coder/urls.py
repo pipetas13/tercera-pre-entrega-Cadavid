@@ -28,4 +28,3 @@ urlpatterns = [
     path("Proyectos/editar/<int:pk>", ProyectoEditar.as_view(), name="Editar Proyectos"),
 ]
 
-urlpatterns += static[settings.MEDIA_URL,document_root=settings.MEDIA_ROOT]
