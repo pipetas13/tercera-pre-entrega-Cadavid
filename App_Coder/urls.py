@@ -9,22 +9,22 @@ urlpatterns = [
     path("registro/",registro, name="Sign Up"),
     path("login/",iniciar_sesion, name="Sign In"),
     path("logout/",LogoutView.as_view(template_name="App_Coder/autentication/logout.html"), name="Logout"),
-
+    path("editarUsuario", editarUsuario, name="Editar Usuario"),
     #urls clases 
     path('about/',about, name='About'),
     path('artista/',artista_formulario, name='Artists'),
-    path('proyecto/',proyecto_formulario, name='Projects'),
+    path('proyecto/',leerProyectos, name='Projects'),
 
     #urls busqueda
     path('busquedaProyecto/',busquedaProyecto,name='BusquedaProyecto'),
     path('resultadosBusqueda/', resultados,name='ResultadosBusqueda'),
 
     # cruds 
-    #CRUD de Cursos
+    #CRUD de Proyectos
+    path("editarproyecto/<proyecto_nombre>", editarProyecto, name="Editar Proyecto"),
+    path('añadirproyecto',proyecto_formulario, name='Añadir Proyecto'),
+    #path('borrarproyecto',borrarproyecto, name='Borrar Proyecto'),
     path('proyecto/',proyectos, name='Proyectos'),
     path("Proyectos/lista", ProyectoLista.as_view(), name = "Ver Proyectos"),
-    path("Proyectos/nuevo", ProyectoCrear.as_view(), name = "Crear Proyectos"),
-    path("Proyectos/borrar/<int:pk>", ProyectoBorrar.as_view(), name="Borrar Proyectos"),
-    path("Proyectos/editar/<int:pk>", ProyectoEditar.as_view(), name="Editar Proyectos"),
 ]
 

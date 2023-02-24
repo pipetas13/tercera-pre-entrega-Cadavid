@@ -1,0 +1,29 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Edit User
+ {% endblock %}
+ {% block forms %} 
+
+ {%if miFormulario.errors %}
+
+ <p style="color: red">Están mal los datos</p>
+
+ {% endif %}
+
+
+ <form action="" method="POST"> {%csrf_token%}
+
+     <table>
+
+         {{miFormulario.as_table}}
+
+     </table>
+
+     <input type="submit", value="Enviar", style="color:red">
+
+ </form>
+
+                   
+{% endblock %}

@@ -1,0 +1,24 @@
+
+{% extends 'App_Coder/inicio.html' %}
+
+{% block titulo %} 
+   Add Projects
+ {% endblock %}
+
+
+ {% block forms %} 
+
+<h2 class="text-white mb-5">Fill Project Form</h2>
+{% if proyecto_formulario.errors %}
+<p> Estan mal los datos </p>
+{% endif %}
+<form action = '' method="POST"> {% csrf_token %}
+   <table>
+       {{ formulario3.as_table }}
+   </table>
+   <input type="submit",value='Enviar'>
+
+</form>    
+
+                   
+{% endblock %}

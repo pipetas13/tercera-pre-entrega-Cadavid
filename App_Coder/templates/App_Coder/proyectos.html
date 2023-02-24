@@ -7,23 +7,23 @@
 
 
  {% block forms %} 
- <body>
+
     {% for x in proyecto %}
-        <li>{{x}}</li>
+        <li>Name of the project is:{{x.nombre}}</li>
+        <p>{{x.nombre}} Number {{x.cantidad}} NFT</p>
+
+        <img src="/{{ MEDIA_URL }}{{x.imagen.url}}" alt="img"> 
+        <button>
+            <a href="{% url 'Editar Proyecto' x.nombre %}">Edit project</a>
+        
+        </button>
+        <button>
+            <a href="{% url 'Añadir Proyecto' %}">Add project</a>
+        
+        </button>
+       
     {% endfor %}
-</body>
 
-<h2 class="text-white mb-5">Fill Project Form</h2>
-{% if proyecto_formulario.errors %}
-<p> Estan mal los datos </p>
-{% endif %}
-<form action = '' method="POST"> {% csrf_token %}
-   <table>
-       {{ formulario3.as_table }}
-   </table>
-   <input type="submit",value='Enviar'>
-
-</form>    
  
                    
 {% endblock %}
